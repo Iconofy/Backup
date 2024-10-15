@@ -1,0 +1,42 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "cpp",
+		"prefix": "sieve",
+		"body": [
+			// "bitset<1000001> is_prime;",
+			// "is_prime.flip();",
+			// "is_prime[0]=is_prime[1]=false;",
+			// "for(int i=2;i<=1000000;i++){",
+			// "    if(is_prime[i]){",
+			// "        for(int j=i*2;j<=1000000;j+=i) {",
+			// "            is_prime[j]=false;",
+			// "        }",
+			// "        cout<<i<<' ';",
+			// "    }",
+			// "}",
+
+			"bitset<1000001> is_prime;",
+
+			"void sieve(){",
+			"	is_prime.flip();",
+			"	is_prime[0]=is_prime[1]=0;",
+			"	for(int i=2;i*i<=1000000;i++)",
+			"		if(is_prime[i])",
+			"			for(int j=i*2;j<=1000000;j+=i)",
+			"				is_prime[j]=0;",
+			"}",
+			
+			"bool isPrime(int n){",
+			"	if(!is_prime[2])sieve();",
+			"	return is_prime[n];",
+			"}",
+		],
+	}
+}
